@@ -139,7 +139,7 @@ gulp.task('parseTemplate',function () {
                 ...data[ct.country]
             }
         }))
-        .pipe(rename(data[ct.country].name + '.html'))
+        .pipe(rename(data[ct.country].alpha3Code + '.html'))
         .pipe(gulp.dest(dist));
 });
 

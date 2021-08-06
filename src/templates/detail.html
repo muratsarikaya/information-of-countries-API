@@ -49,7 +49,8 @@
                         <div class="feature-item">Currencies: {% for item in currencies %} {{ item.name }}{% endfor %}</div>
                         <div class="feature-item">Languages: {% for language in languages %} {{ language.name }}{% endfor %}</div>
                     </div>
-                    <div class="col-12 mt-5"><span class="mr-3">Border Countries:</span> {% for border in borders %} <div class="back-button keyword">{{ border }}</div>{% endfor %}
+                    <div class="col-12 mt-5"><span class="mr-3">Border Countries:</span> {% for border in borders %} <a
+                            class="borders-link" href="{{ border|lower }}.html" rel=""><div class="back-button keyword">{{ border }}</div></a>{% endfor %}
                     </div>
                 </div>
             </div>

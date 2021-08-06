@@ -58,7 +58,7 @@ function getData(url) {
             let results = "";
             res.forEach(function (data) {
                 results += '<div class="item-country mb-5">\n' +
-                    '                    <a href="' + data.name + '.html" class="country">\n' +
+                    '                    <a href="' + data.alpha3Code.toLowerCase() + '.html" class="country">\n' +
                     '                    <div class="item-flag">\n' +
                     '                        <img class="img-fluid" src="' + data.flag + '" alt="">\n' +
                     '                    </div>\n' +
@@ -94,9 +94,9 @@ function getDetailData(url) {
             // res[0].languages.forEach(function (data) {
             //     v_languages += data.name + ', '
             // })
-            res[0].borders.forEach(function (data) {
-                borders += '<div class="back-button keyword">' + data + ' </div>';
-            })
+            // res[0].borders.forEach(function (data) {
+            //     borders += '<div class="back-button keyword">' + data + ' </div>';
+            // })
             $('.section-detail').html(' <div class="col-md-6">\n' +
                 '                <img class="img-fluid" src="' + res[0].flag + '" alt="">\n' +
                 '            </div>\n' +
