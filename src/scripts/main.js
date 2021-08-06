@@ -16,12 +16,12 @@ $(document).ready(function () {
     // const url_location = location.hash;
     // openDetailPage(url_location)
 });
-$(window).on('hashchange', function () {
-    const url_location = location.hash;
-    openDetailPage(url_location.split('#')[1]);
-    $('.page-main').addClass('d-none');
-    $('.detail').removeClass('d-none');
-});
+// $(window).on('hashchange', function () {
+//     const url_location = location.hash;
+//     openDetailPage(url_location.split('#')[1]);
+//     $('.page-main').addClass('d-none');
+//     $('.detail').removeClass('d-none');
+// });
 
 $('.select').click(function () {
     $('.selectbox ul').toggleClass('visible')
