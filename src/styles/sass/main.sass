@@ -1,0 +1,161 @@
+body
+  background-color: $dark-bg-color
+header
+  background-color: $dark-color
+  width: 100%
+  height: 80px
+  padding: 0 5vw
+.left-header
+  color: $white-element
+  font-size: 20px
+  align-self: center
+.right-header
+  align-self: center
+  color: $white-element
+.item-xy-center
+  display: flex
+  justify-content: space-between
+
+.page-header
+  @extend .item-xy-center
+
+.search-input
+  display: flex
+  padding: 10px 0
+
+  input
+    background-color: $dark-color
+    color: $white-element
+
+  input::placeholder
+    color: $white-element
+
+.page-main
+  margin: 60px
+
+input
+  border: none
+  outline: none
+
+.icon
+  color: $white-element
+  margin: 0 15px
+
+.left-input
+  width: 100%
+  max-width: 350px
+  background-color: $dark-color
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  -webkit-box-shadow: 0px 0px 5px -4px #000
+  -moz-box-shadow: 0px 0px 5px -4px #000
+  box-shadow: 0px 0px 5px -4px #000
+.country
+  display: block
+  text-decoration: none
+  color: $white-element !important
+  background-color: $dark-color
+  overflow: hidden
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+
+  .item-information
+    font-size: 14px
+    padding: 17px
+    .name
+      font-size: 18px
+.item-flag
+  img
+    width: 100%
+    height: 180px
+    object-fit: cover
+.item-country
+  width: calc((100% / 4) - 30px)
+
+.countries-results
+  justify-content: space-between
+
+.detail
+  margin: 60px
+
+.section-detail
+  color: $white-element
+  font-family: $font-family
+  .name
+    font-size: 26px
+    font-weight: 900
+  .feature-item
+    font-size: 14px
+
+.button
+  -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    -webkit-box-shadow: 0 0 5px -4px #000
+    -moz-box-shadow: 0 0 5px -4px #000
+    box-shadow: 0 0 5px -4px #000
+
+.back
+  padding: 10px 35px
+  a
+    color: $white-element !important
+    text-decoration: none
+  i
+    margin-right: 10px
+.back-button
+  display: inline-block
+  background-color: $dark-color
+  -moz-border-radius: 5px
+  border-radius: 5px
+  -webkit-box-shadow: 0 0 5px -4px #000
+  -moz-box-shadow: 0 0 5px -4px #000
+  box-shadow: 0 0 5px -4px #000
+
+.keyword
+  margin-right: 10px
+  padding: 5px 15px
+
+.right-input
+  width: 100%
+  max-width: 160px
+  select
+    font-size: 16px
+    line-height: 28px
+    background-color: $dark-color
+    color: $white-element
+    border: none
+    outline: none
+  .select
+    font-size: 16px
+    padding: 10px 28px 10px 15px
+    background-color: $dark-color
+    color: $white-element
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    cursor: pointer
+    i
+      position: absolute
+      right: 11px
+      top: 13px
+
+  .selectbox
+    position: relative
+    ul
+      visibility: hidden
+      position: absolute
+      width: 100%
+      left: 0
+      margin-top: 4px
+      background-color: $dark-color
+      color: $white-element
+      -webkit-border-radius: 5px
+      -moz-border-radius: 5px
+      border-radius: 5px
+      z-index: 2
+      li
+        padding: 3px 0
+        cursor: pointer
+

@@ -1,0 +1,35 @@
+{
+  "name": "information-of-countries-api",
+  "version": "1.0.0",
+  "description": "An application that provides information about countries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratsarikaya/information-of-countries-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muratsarikaya/information-of-countries-API/issues"
+  },
+  "homepage": "https://github.com/muratsarikaya/information-of-countries-API#readme",
+  "devDependencies": {
+    "bootstrap": "^5.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-open": "^3.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify-es": "^3.0.0",
+    "jquery": "^3.6.0",
+    "sass": "^1.37.5"
+  }
+}
