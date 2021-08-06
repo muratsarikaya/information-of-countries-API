@@ -13,8 +13,8 @@ $(document).ready(function () {
             }
         }
     })
-    const url_location = location.hash;
-    openDetailPage(url_location)
+    // const url_location = location.hash;
+    // openDetailPage(url_location)
 });
 $(window).on('hashchange', function () {
     const url_location = location.hash;
@@ -43,10 +43,10 @@ function getDataByRegion(keyword) {
     getData(url)
 }
 
-function getDataByHash(keyword) {
-    let url = "https://restcountries.eu/rest/v2/name/" + keyword;
-    getDetailData(url)
-}
+// function getDataByHash(keyword) {
+//     let url = "https://restcountries.eu/rest/v2/name/" + keyword;
+//     getDetailData(url)
+// }
 
 function getData(url) {
     $.ajax({
@@ -81,51 +81,51 @@ function getData(url) {
     });
 }
 
-function getDetailData(url) {
-    $.ajax({
-        url: url,
-        method: 'GET',
-        dataType: 'json',
-        // data: data,
-        success: function (res) {
-            let results = "";
-            let v_languages = "";
-            let borders = "";
-            // res[0].languages.forEach(function (data) {
-            //     v_languages += data.name + ', '
-            // })
-            // res[0].borders.forEach(function (data) {
-            //     borders += '<div class="back-button keyword">' + data + ' </div>';
-            // })
-            $('.section-detail').html(' <div class="col-md-6">\n' +
-                '                <img class="img-fluid" src="' + res[0].flag + '" alt="">\n' +
-                '            </div>\n' +
-                '            <div class="col-md-6 d-flex align-items-center">\n' +
-                '           <div class="row">' +
-                '           <div class="col-12 mt-4 mt-md-auto">' + '  <div class="name mb-4">' + res[0].name + '</div>\n' +
-                '            </div>' +
-                '           <div class="col-md-6">' +
-                '                <div class="feature-item">Native Name: ' + res[0].nativeName + '</div>\n' +
-                '                <div class="feature-item">Population: ' + res[0].population + '</div>\n' +
-                '                <div class="feature-item">Region: ' + res[0].region + '</div>\n' +
-                '                <div class="feature-item">Subregion: ' + res[0].subregion + '</div>\n' +
-                '                <div class="feature-item">Capital: ' + res[0].capital + '</div>\n' +
-                '            </div>' +
-                '           <div class="col-md-6 mt-4 mt-md-0">' +
-                '                <div class="feature-item">Top Level Domain: ' + res[0].topLevelDomain[0] + '</div>\n' +
-                '                <div class="feature-item">Currencies: ' + res[0].currencies[0].name + '</div>\n' +
-                '                <div class="feature-item">Languages:  ' + v_languages + '</div>\n' +
-                '            </div>' +
-                '           <div class="col-12 mt-5">Border Countries: ' + borders +
-                '            </div>' +
-                '            </div>' +
-                '            </div>')
-        }, error: function (res) {
-
-        }
-    });
-}
-
-function openDetailPage(url_location) {
-    getDataByHash(url_location)
-}
+// function getDetailData(url) {
+//     $.ajax({
+//         url: url,
+//         method: 'GET',
+//         dataType: 'json',
+//         // data: data,
+//         success: function (res) {
+//             let results = "";
+//             let v_languages = "";
+//             let borders = "";
+//             res[0].languages.forEach(function (data) {
+//                 v_languages += data.name + ', '
+//             })
+//             res[0].borders.forEach(function (data) {
+//                 borders += '<div class="back-button keyword">' + data + ' </div>';
+//             })
+//             $('.section-detail').html(' <div class="col-md-6">\n' +
+//                 '                <img class="img-fluid" src="' + res[0].flag + '" alt="">\n' +
+//                 '            </div>\n' +
+//                 '            <div class="col-md-6 d-flex align-items-center">\n' +
+//                 '           <div class="row">' +
+//                 '           <div class="col-12 mt-4 mt-md-auto">' + '  <div class="name mb-4">' + res[0].name + '</div>\n' +
+//                 '            </div>' +
+//                 '           <div class="col-md-6">' +
+//                 '                <div class="feature-item">Native Name: ' + res[0].nativeName + '</div>\n' +
+//                 '                <div class="feature-item">Population: ' + res[0].population + '</div>\n' +
+//                 '                <div class="feature-item">Region: ' + res[0].region + '</div>\n' +
+//                 '                <div class="feature-item">Subregion: ' + res[0].subregion + '</div>\n' +
+//                 '                <div class="feature-item">Capital: ' + res[0].capital + '</div>\n' +
+//                 '            </div>' +
+//                 '           <div class="col-md-6 mt-4 mt-md-0">' +
+//                 '                <div class="feature-item">Top Level Domain: ' + res[0].topLevelDomain[0] + '</div>\n' +
+//                 '                <div class="feature-item">Currencies: ' + res[0].currencies[0].name + '</div>\n' +
+//                 '                <div class="feature-item">Languages:  ' + v_languages + '</div>\n' +
+//                 '            </div>' +
+//                 '           <div class="col-12 mt-5">Border Countries: ' + borders +
+//                 '            </div>' +
+//                 '            </div>' +
+//                 '            </div>')
+//         }, error: function (res) {
+//
+//         }
+//     });
+// }
+//
+// function openDetailPage(url_location) {
+//     getDataByHash(url_location)
+// }
