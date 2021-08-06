@@ -5,17 +5,20 @@
  * @type {*|Gulp}
  */
 
-var gulp = require('gulp');
-var twig = require('gulp-twig');
-var rename = require("gulp-rename");
-var minifyCss= require('gulp-minify-css');
-var sass = require('gulp-sass')(require('sass'));
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify-es').default;
-var sourcemaps = require('gulp-sourcemaps');
-var clean = require('gulp-clean');
-var connect = require('gulp-connect');
-var open = require('gulp-open');
+const gulp = require('gulp');
+const twig = require('gulp-twig');
+const rename = require("gulp-rename");
+const minifyCss= require('gulp-minify-css');
+const sass = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
+const sourcemaps = require('gulp-sourcemaps');
+const clean = require('gulp-clean');
+const connect = require('gulp-connect');
+const open = require('gulp-open');
+const download = require("gulp-download-files");
+const fs = require('fs');
+const data = JSON.parse(fs.readFileSync('./countries/all', 'utf8'));
 
 var templates = './src/templates/',
     dist = './dist/',
@@ -48,6 +51,11 @@ gulp.task('html', function () {
         .pipe(connect.reload());
 });
 
+gulp.task('data', function () {
+    download('https://restcountries.eu/rest/v2/all')
+        .pipe(gulp.dest("countries/"));
+});
+
 
 gulp.task('sass', function () {
     return gulp.src(sass_f)
@@ -67,7 +75,6 @@ gulp.task('scripts', function () {
         .pipe(rename('scripts.min.js'))
         .pipe(gulp.dest("./dist/assets/scripts"))
         .pipe(connect.reload());
-
 });
 
 gulp.task('sass:watch', function () {
@@ -108,12 +115,48 @@ gulp.task('open', function () {
         }));
 });
 
+var ct = {
+    country: 0,
+    data: data
+};
+
+function buildTemplates(cb) {
+    gulp.run('parseTemplate', function () {
+        console.log(ct.country + ' finish');
+        if (ct.country < ct.data.length - 1) {
+            ct.country += 1;
+            buildTemplates()
+        }
+    });
+}
+
+
+gulp.task('parseTemplate',function () {
+    return gulp.src('./src/templates/detail.html')
+        .pipe(twig({
+            base:'./src/templates',
+            data:{
+                ...data[ct.country]
+            }
+        }))
+        .pipe(rename(data[ct.country].name + '.html'))
+        .pipe(gulp.dest(dist));
+});
+
+gulp.task('parseAllTemplate',function () {
+    buildTemplates()
+});
+
 
 gulp.task('build', ['scripts','sass','html', 'connect'], function () {
-    gulp.run(['scripts:watch', 'sass:watch', 'html:watch','open'])
+    gulp.run(['scripts:watch', 'sass:watch', 'html:watch','open', 'data'], function () {
+        gulp.run('parseAllTemplate')
+    })
 });
 
 gulp.task('default', ['clean'],function () {
     console.log('Clean Finished');
     gulp.run('build');
 });
+
+//var country = 0;

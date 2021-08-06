@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+    <title>Countries API</title>
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="page-header">
+        <div class="left-header">Where in the world?</div>
+        <div class="right-header"> O </div>
+    </header>
+    <div class="detail">
+        <div class="filter-inputs">
+                <div class="back-button">
+                    <div class="back">
+                        <a href="/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> <span>Back </span></a>
+                    </div>
+                </div>
+        </div>
+        <div class="row mt-5 section-detail">
+            <div class="col-md-6">
+                <img class="img-fluid" src="{{ flag }}" alt="">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="row">
+                    <div class="col-12 mt-4 mt-md-auto">
+                        <div class="name mb-4">{{ name }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-item">Native Name: {{ nativeName }}</div>
+                        <div class="feature-item">Population: {{ population }}</div>
+                        <div class="feature-item">Region: {{ region }}</div>
+                        <div class="feature-item">Subregion: {{ subregion }}</div>
+                        <div class="feature-item">Capital: {{ capital }}</div>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <div class="feature-item">Top Level Domain: {{ topLevelDomain }}</div>
+                        <div class="feature-item">Currencies: {% for item in currencies %} {{ item.name }}{% endfor %}</div>
+                        <div class="feature-item">Languages: {% for language in languages %} {{ language.name }}{% endfor %}</div>
+                    </div>
+                    <div class="col-12 mt-5"><span class="mr-3">Border Countries:</span> {% for border in borders %} <div class="back-button keyword">{{ border }}</div>{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/scripts/scripts.min.js"></script>
+-->
+</body>
+</html>
